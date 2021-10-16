@@ -4,7 +4,7 @@ const logger = createLogger({
   exitOnError: false,
   format: format.combine(format.colorize(), format.json()),
   transports: [new transports.Console()],
-  level: 'info' // TODO: make this configurable
+  level: process.env.LEVEL,
 })
 
 export default logger
