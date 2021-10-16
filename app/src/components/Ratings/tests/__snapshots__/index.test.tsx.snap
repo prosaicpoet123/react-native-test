@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ratings renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  3.5
+  <Text>
+     (
+    20
+    )
+  </Text>
+</View>
+`;

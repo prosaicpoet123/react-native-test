@@ -1,0 +1,56 @@
+const colours = {
+  // Primary Colours
+  darkGreenPrimaryLight: '#038678',
+  darkGreenPrimaryDark: '#00322B',
+  darkGreenPrimary: '#00594C',
+  brightGreenPrimaryDark: '#6DA500',
+  brightGreenPrimaryLight: '#87D96A',
+  brightGreenPrimary: '#93C90E',
+  pomegranatePrimaryLight: '#FF6C67',
+  pomegranatePrimaryDark: '#D12D28',
+  pomegranatePrimary: '#F7403A',
+  // Secondary Colours
+  mintSecondary: '#C8E59A',
+  mintSecondary75Tint: '#D6ECB3',
+  mintSecondary50Tint: '#E3F2CC',
+  mangoSecondary: '#FCD189',
+  mangoSecondary75Tint: '#FDDCA6',
+  mangoSecondary50Tint: '#FDE8C4',
+  blushSecondary: '#FFB7AE',
+  blushSecondary75Tint: '#FFC9C2',
+  blushSecondary50Tint: '#FFD8D6',
+  kelpSecondary: '#C2DAD1',
+  kelpSecondary75Tint: '#D1E3DD',
+  kelpSecondary50Tint: '#E0ECE8',
+  powderSecondary: '#AACAE6',
+  powderSecondary75Tint: '#BFD7EC',
+  powderSecondary50Tint: '#D4E4F2',
+  // Site Colours
+  black: '#333333',
+  white: '#FFFFFF',
+  grey: '#979797',
+  lightGrey: '#EEEEEF',
+  lightGrey2: '#f2f2f3',
+  lightGrey3: '#f6f6f6',
+  darkGrey: '#585858',
+  error: '#D61616',
+  grey1: '#585858',
+  grey2: '#888',
+  grey3: '#979797',
+  grey4: '#CECECE',
+  grey5: '#EEE',
+}
+
+const fontSizes = {
+  xxsmall: 10,
+  xsmall: 12,
+  small: 14,
+  regular: 16,
+  medium: 18,
+  large: 22,
+  xlarge: 24,
+  xxlarge: 28,
+  huge: 32,
+}
+
+export { colours, fontSizes }

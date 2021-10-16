@@ -10,8 +10,13 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
     "react": "17.0.1",
-    "react-native": "0.64.1"
+    "react-native": "0.64.1",
+    "react-native-ratings": "^8.1.0",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -26,6 +31,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "jest": "^27.0.6",
+    "jest-fetch-mock": "^3.0.3",
     "metro-react-native-babel-preset": "^0.64.0",
     "prettier": "^2.3.2",
     "react-test-renderer": "17.0.1",
@@ -35,6 +41,10 @@
     "@types/react": "^17"
   },
   "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ],
     "preset": "react-native",
     "moduleFileExtensions": [
       "ts",

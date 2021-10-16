@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#CECECE",
+        "borderWidth": 1,
+        "minHeight": 300,
+        "padding": 4,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://images.hollandandbarrettimages.co.uk/productimages/HB/180/000001_A.jpg",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "height": 180,
+            "width": "100%",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "padding": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "marginBottom": 8,
+            },
+            Object {
+              "fontWeight": "bold",
+            },
+            Object {
+              "fontSize": 14,
+            },
+          ]
+        }
+      >
+        Example Product
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`ProductCard renders correctly as details 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#CECECE",
+        "borderWidth": 1,
+        "minHeight": 300,
+        "padding": 4,
+      },
+      Object {
+        "height": "100%",
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://images.hollandandbarrettimages.co.uk/productimages/HB/180/000001_A.jpg",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "height": 180,
+            "width": "100%",
+          },
+          Object {
+            "height": 370,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "padding": 4,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "marginBottom": 8,
+            },
+            Object {
+              "fontWeight": "bold",
+            },
+            Object {
+              "fontSize": 22,
+            },
+          ]
+        }
+      >
+        Example Product
+      </Text>
+      <Text
+        style={
+          Object {
+            "marginBottom": 8,
+          }
+        }
+      >
+        £20
+      </Text>
+    </View>
+  </View>
+</View>
+`;
