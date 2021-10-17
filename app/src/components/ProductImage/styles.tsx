@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
+    marginVertical: 8,
   },
   thumbnail: {
     height: 70,

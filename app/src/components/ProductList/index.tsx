@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import { IProduct } from '../../@Types/product'
 import { RootStackParamList } from '../../@Types/navigation'
-import { ActivityIndicator, FlatList, Text, View } from 'react-native'
+import { ActivityIndicator, FlatList, Platform, Text, View } from 'react-native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import ProductCard from '../ProductCard'
 import styles from './styles'
@@ -17,8 +17,13 @@ const ProductList: FC<IProps> = ({ navigation }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
+        // hit an issue with data fetching on Android emulator, this issue: https://stackoverflow.com/questions/33704130/react-native-android-fetch-failing-on-connection-to-local-api
+        // localhost works fine on IOS, but for Android development I had to switch localhost to 10.0.2.2, for the purposes of local development this was okay
+        // almost certain there is a better fix
         const response = await fetch(
-          `http://localhost:4000/products/all?page=${offset}`,
+          `http://${
+            Platform.OS === 'ios' ? 'localhost' : '10.0.2.2'
+          }:4000/products/all?page=${offset}`,
         )
         const json = await response.json()
         setData((d) => [...d, ...json.products])
@@ -46,7 +51,7 @@ const ProductList: FC<IProps> = ({ navigation }) => {
           <FlatList
             numColumns={2}
             horizontal={false}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item, index) => `${item.id}-${index}`}
             data={data}
             renderItem={({ item }) => (
               <View style={styles.item}>
@@ -58,7 +63,7 @@ const ProductList: FC<IProps> = ({ navigation }) => {
                 />
               </View>
             )}
-            onEndReachedThreshold={2}
+            onEndReachedThreshold={20}
             onEndReached={() => setOffset(offset + 1)}
           />
         </View>

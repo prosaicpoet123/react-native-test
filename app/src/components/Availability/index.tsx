@@ -12,13 +12,10 @@ type IProps = IAvailabilityProps
 
 const Availability: FC<IProps> = ({ stock }) => (
   <View style={styles.availability}>
-    <View
-      style={[
-        styles.stockicon,
-        stock === 'INSTOCK' ? styles.instock : styles.oos,
-      ]}
-    />
-    <Text>{parseStockStatus(stock)}</Text>
+    <Text
+      style={[styles.text, stock === 'INSTOCK' ? styles.instock : styles.oos]}>
+      {parseStockStatus(stock)}
+    </Text>
   </View>
 )
 

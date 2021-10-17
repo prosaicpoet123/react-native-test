@@ -9,9 +9,6 @@ const styles = StyleSheet.create({
     minHeight: 300,
     backgroundColor: colours.white,
   },
-  productCardLarge: {
-    height: '100%',
-  },
   productInfo: {
     padding: 4,
   },
@@ -26,6 +23,13 @@ const styles = StyleSheet.create({
   },
   titleSmall: {
     fontSize: fontSizes.small,
+  },
+  price: {
+    fontSize: fontSizes.medium,
+    fontWeight: 'bold',
+  },
+  isDetails: {
+    borderWidth: 0,
   },
 })
 

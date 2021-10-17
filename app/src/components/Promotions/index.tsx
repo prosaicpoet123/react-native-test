@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { FlatList, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import styles from './styles'
 
 interface IPromotionsProps {
@@ -10,11 +10,11 @@ type IProps = IPromotionsProps
 
 const Promotions: FC<IProps> = ({ promotions }) => (
   <View style={styles.promotions}>
-    <FlatList
-      data={promotions}
-      renderItem={({ item }) => <Text style={styles.promotion}>{item}</Text>}
-      keyExtractor={(item, index) => `${item}-${index}`}
-    />
+    {promotions.map((promotion, index) => (
+      <Text style={styles.promotion} key={`${promotion}-${index}`}>
+        {promotion}
+      </Text>
+    ))}
   </View>
 )
 

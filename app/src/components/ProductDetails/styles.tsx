@@ -1,16 +1,9 @@
 import { StyleSheet } from 'react-native'
+import { colours } from '../../config/themes'
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-start',
-    marginLeft: 8,
-    marginRight: 8,
-  },
-  item: {
-    width: '50%',
-    padding: 3,
+    backgroundColor: colours.white,
   },
 })
 

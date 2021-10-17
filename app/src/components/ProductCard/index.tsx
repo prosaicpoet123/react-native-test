@@ -36,7 +36,7 @@ const ProductCard: FC<IProps> = ({
     <TouchableOpacity
       onPress={() => onPress && onPress(product)}
       disabled={isDetails}>
-      <View style={[styles.productCard, isDetails && styles.productCardLarge]}>
+      <View style={[styles.productCard, isDetails && styles.isDetails]}>
         <ProductImage
           images={images}
           id={id}
@@ -58,7 +58,11 @@ const ProductCard: FC<IProps> = ({
           {!!isDetails && (
             <>
               {!!price && (
-                <Text style={styles.productInfoItem}>{`£${price}`}</Text>
+                <Text
+                  style={[
+                    styles.productInfoItem,
+                    styles.price,
+                  ]}>{`£${price}`}</Text>
               )}
               {!!stock_status && (
                 <View style={styles.productInfoItem}>

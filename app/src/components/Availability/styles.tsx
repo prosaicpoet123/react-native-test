@@ -7,18 +7,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     flexDirection: 'row',
-  },
-  stockicon: {
-    height: 20,
-    width: 20,
-    borderRadius: 50,
-    marginRight: 4,
+    color: colours.white,
   },
   instock: {
     backgroundColor: colours.darkGreenPrimary,
   },
   oos: {
     backgroundColor: colours.pomegranatePrimaryDark,
+  },
+  text: {
+    paddingVertical: 2,
+    paddingHorizontal: 4,
+    borderRadius: 5,
+    overflow: 'hidden',
+    color: colours.white,
   },
 })
 
