@@ -5,28 +5,29 @@ exports[`<Availability /> renders correctly 1`] = `
   style={
     Object {
       "alignItems": "center",
+      "color": "#FFFFFF",
       "display": "flex",
       "flexDirection": "row",
       "justifyContent": "flex-start",
     }
   }
 >
-  <View
+  <Text
     style={
       Array [
         Object {
-          "borderRadius": 50,
-          "height": 20,
-          "marginRight": 4,
-          "width": 20,
+          "borderRadius": 5,
+          "color": "#FFFFFF",
+          "overflow": "hidden",
+          "paddingHorizontal": 4,
+          "paddingVertical": 2,
         },
         Object {
           "backgroundColor": "#00594C",
         },
       ]
     }
-  />
-  <Text>
+  >
     In Stock
   </Text>
 </View>

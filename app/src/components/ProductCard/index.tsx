@@ -1,5 +1,7 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import React, { FC } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
+import { RootStackParamList } from '../../@Types/navigation'
 import { IProduct } from '../../@Types/product'
 import Availability from '../Availability'
 import ProductImage from '../ProductImage'
@@ -10,7 +12,7 @@ interface IProductCardProps {
   product: IProduct
   resolution?: number
   isDetails?: boolean
-  onPress?: (x: IProduct) => void
+  navigation?: NativeStackNavigationProp<RootStackParamList, 'Product List'>
 }
 
 type IProps = IProductCardProps
@@ -19,7 +21,7 @@ const ProductCard: FC<IProps> = ({
   product,
   resolution = 180,
   isDetails,
-  onPress,
+  navigation,
 }) => {
   const {
     id,
@@ -34,7 +36,7 @@ const ProductCard: FC<IProps> = ({
 
   return (
     <TouchableOpacity
-      onPress={() => onPress && onPress(product)}
+      onPress={() => navigation?.navigate('Product Details', { product })}
       disabled={isDetails}>
       <View style={[styles.productCard, isDetails && styles.isDetails]}>
         <ProductImage

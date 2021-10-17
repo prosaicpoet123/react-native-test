@@ -116,7 +116,7 @@ exports[`<ProductCard /> renders correctly as details 1`] = `
           "padding": 4,
         },
         Object {
-          "height": "100%",
+          "borderWidth": 0,
         },
       ]
     }
@@ -154,6 +154,7 @@ exports[`<ProductCard /> renders correctly as details 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "flexWrap": "wrap",
+            "marginVertical": 8,
           }
         }
       >
@@ -211,9 +212,15 @@ exports[`<ProductCard /> renders correctly as details 1`] = `
       </Text>
       <Text
         style={
-          Object {
-            "marginBottom": 8,
-          }
+          Array [
+            Object {
+              "marginBottom": 8,
+            },
+            Object {
+              "fontSize": 18,
+              "fontWeight": "bold",
+            },
+          ]
         }
       >
         £20

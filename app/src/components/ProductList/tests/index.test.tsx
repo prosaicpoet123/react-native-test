@@ -1,42 +1,43 @@
 import React from 'react'
-import renderer, { act } from 'react-test-renderer'
-import ProductList from '..'
+import renderer from 'react-test-renderer'
+import { ProductListUI as ProductList } from '..'
 
 describe('<ProductList />', () => {
   it('renders correctly', async () => {
-    const fakeProducts = {
-      products: [
-        {
-          id: '1',
-          name: 'Fake Product 1',
-        },
-        {
-          id: '2',
-          name: 'Fake Product 2',
-        },
-        {
-          id: '3',
-          name: 'Fake Product 3',
-        },
-      ],
-    }
+    const products = [
+      {
+        id: '1',
+        name: 'Fake Product 1',
+        images: [],
+        price: 20,
+        promotions: [],
+        rating: 1,
+        review_count: 30,
+        stock_status: 'INSTOCK',
+      },
+      {
+        id: '2',
+        name: 'Fake Product 2',
+        images: [],
+        price: 20,
+        promotions: [],
+        rating: 1,
+        review_count: 30,
+        stock_status: 'OUTOFSTOCK',
+      },
+      {
+        id: '3',
+        name: 'Fake Product 3',
+        images: [],
+        price: 20,
+        promotions: [],
+        rating: 1,
+        review_count: 30,
+        stock_status: 'LOWSTOCK',
+      },
+    ]
 
-    global.fetch = jest.fn().mockImplementationOnce(() => {
-      return new Promise((resolve) => {
-        resolve({
-          ok: true,
-          json: () => fakeProducts,
-        })
-      })
-    })
-
-    let tree
-
-    await act(async () => {
-      tree = renderer.create(<ProductList />).toJSON()
-    })
-
-    expect(fetch).toHaveBeenCalledTimes(1)
+    const tree = renderer.create(<ProductList products={products} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

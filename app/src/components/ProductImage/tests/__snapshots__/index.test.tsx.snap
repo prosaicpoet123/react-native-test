@@ -65,6 +65,7 @@ exports[`<ProductImage /> renders correctly with thumbnails 1`] = `
         "display": "flex",
         "flexDirection": "row",
         "flexWrap": "wrap",
+        "marginVertical": 8,
       }
     }
   >
@@ -127,7 +128,9 @@ exports[`<ProductImage /> renders correctly with thumbnails 1`] = `
             onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "opacity": 0.2,
+                "borderColor": "#00594C",
+                "borderWidth": 1,
+                "opacity": 1,
               }
             }
           >

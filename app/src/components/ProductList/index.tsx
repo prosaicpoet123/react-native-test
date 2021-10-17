@@ -1,14 +1,85 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState, memo } from 'react'
 import { IProduct } from '../../@Types/product'
 import { RootStackParamList } from '../../@Types/navigation'
 import { ActivityIndicator, FlatList, Platform, Text, View } from 'react-native'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import {
+  NativeStackNavigationProp,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack'
 import ProductCard from '../ProductCard'
 import styles from './styles'
 
-type IProps = NativeStackScreenProps<RootStackParamList, 'Product List'>
+interface IProductListItem {
+  product: IProduct
+  navigation?: NativeStackNavigationProp<RootStackParamList, 'Product List'>
+}
 
-const ProductList: FC<IProps> = ({ navigation }) => {
+type IProductListItemProps = IProductListItem
+
+const ProductListItem: FC<IProductListItemProps> = ({
+  product,
+  navigation,
+}) => (
+  <View style={styles.item}>
+    <ProductCard product={product} navigation={navigation} />
+  </View>
+)
+
+const MemoizedItem = memo(ProductListItem)
+interface IProductListUI {
+  products: IProduct[]
+  isError?: boolean
+  isLoading?: boolean
+  onEndReached?: () => void
+  navigation?: NativeStackNavigationProp<RootStackParamList, 'Product List'>
+}
+
+type IProductListUIProps = IProductListUI
+
+const ProductListUI: FC<IProductListUIProps> = ({
+  products,
+  navigation,
+  isError,
+  isLoading,
+  onEndReached,
+}) => {
+  if (isError) return <Text>Oops! Something Went Wrong...</Text>
+
+  const renderItem = ({ item }: { item: IProduct }) => (
+    <MemoizedItem product={item} navigation={navigation} />
+  )
+
+  return (
+    <View>
+      {isLoading ? (
+        <View style={styles.loading}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      ) : (
+        <View style={styles.container}>
+          <FlatList
+            numColumns={2}
+            horizontal={false}
+            keyExtractor={(item, index) => `${item.id}-${index}`}
+            data={products}
+            renderItem={renderItem}
+            initialNumToRender={25}
+            maxToRenderPerBatch={25}
+            onEndReachedThreshold={2}
+            onEndReached={onEndReached}
+          />
+        </View>
+      )}
+    </View>
+  )
+}
+
+type IProductListProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Product List'
+>
+
+const ProductList: FC<IProductListProps> = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true)
   const [isError, setError] = useState(false)
   const [data, setData] = useState([] as IProduct[])
@@ -38,38 +109,15 @@ const ProductList: FC<IProps> = ({ navigation }) => {
     getProducts()
   }, [offset])
 
-  if (isError) return <Text>Oops! Something Went Wrong...</Text>
-
   return (
-    <View>
-      {isLoading ? (
-        <View style={styles.loading}>
-          <ActivityIndicator size="large" color="#0000ff" />
-        </View>
-      ) : (
-        <View style={styles.container}>
-          <FlatList
-            numColumns={2}
-            horizontal={false}
-            keyExtractor={(item, index) => `${item.id}-${index}`}
-            data={data}
-            renderItem={({ item }) => (
-              <View style={styles.item}>
-                <ProductCard
-                  product={item}
-                  onPress={(product: IProduct) =>
-                    navigation.navigate('Product Details', { product })
-                  }
-                />
-              </View>
-            )}
-            onEndReachedThreshold={20}
-            onEndReached={() => setOffset(offset + 1)}
-          />
-        </View>
-      )}
-    </View>
+    <ProductListUI
+      navigation={navigation}
+      products={data}
+      isError={isError}
+      isLoading={isLoading}
+      onEndReached={() => setOffset(offset + 1)}
+    />
   )
 }
 
-export default ProductList
+export { ProductList as default, ProductListUI }

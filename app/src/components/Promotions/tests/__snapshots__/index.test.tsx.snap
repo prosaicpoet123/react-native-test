@@ -9,73 +9,33 @@ exports[`<Promotions /> renders correctly 1`] = `
     }
   }
 >
-  <RCTScrollView
-    data={
-      Array [
-        "promotion 1",
-        "promotion 2",
-      ]
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#F7403A",
+        "borderRadius": 5,
+        "color": "#FFFFFF",
+        "overflow": "hidden",
+        "paddingHorizontal": 4,
+        "paddingVertical": 2,
+      }
     }
-    disableVirtualization={false}
-    getItem={[Function]}
-    getItemCount={[Function]}
-    horizontal={false}
-    initialNumToRender={10}
-    keyExtractor={[Function]}
-    maxToRenderPerBatch={10}
-    onContentSizeChange={[Function]}
-    onEndReachedThreshold={2}
-    onLayout={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    removeClippedSubviews={false}
-    renderItem={[Function]}
-    scrollEventThrottle={50}
-    stickyHeaderIndices={Array []}
-    updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
-    windowSize={21}
   >
-    <View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#F7403A",
-              "borderRadius": 20,
-              "color": "#FFFFFF",
-              "paddingHorizontal": 4,
-              "paddingVertical": 2,
-            }
-          }
-        >
-          promotion 1
-        </Text>
-      </View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#F7403A",
-              "borderRadius": 20,
-              "color": "#FFFFFF",
-              "paddingHorizontal": 4,
-              "paddingVertical": 2,
-            }
-          }
-        >
-          promotion 2
-        </Text>
-      </View>
-    </View>
-  </RCTScrollView>
+    promotion 1
+  </Text>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#F7403A",
+        "borderRadius": 5,
+        "color": "#FFFFFF",
+        "overflow": "hidden",
+        "paddingHorizontal": 4,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    promotion 2
+  </Text>
 </View>
 `;
