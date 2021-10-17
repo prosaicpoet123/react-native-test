@@ -4,12 +4,16 @@ interface IPrice {
 }
 
 interface IProductImageItem {
-  pathname: string
-  resolution: string
+  path: string
+  resolution: number
 }
 
 interface IProductImagesList {
   list: IProductImageItem[]
+}
+
+interface IPromotion {
+  text: string
 }
 
 interface IProduct {
@@ -17,7 +21,7 @@ interface IProduct {
   images: IProductImagesList[]
   name: string
   price: number
-  promotions: string[]
+  promotions: IPromotion[]
   rating: number
   review_count: number
   stock_status: string

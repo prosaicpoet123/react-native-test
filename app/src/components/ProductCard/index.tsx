@@ -1,14 +1,14 @@
 import React, { FC } from 'react'
-import { Image, Text, TouchableOpacity, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import { IProduct } from '../../@Types/product'
 import Availability from '../Availability'
-import Promotions from '../Promotions'
+import ProductImage from '../ProductImage'
 import Ratings from '../Ratings'
 import styles from './styles'
 
 interface IProductCardProps {
   product: IProduct
-  resolution?: string
+  resolution?: number
   isDetails?: boolean
   onPress?: (x: IProduct) => void
 }
@@ -21,20 +21,28 @@ const ProductCard: FC<IProps> = ({
   isDetails,
   onPress,
 }) => {
-  const { id, name, price, stock_status, rating, review_count, promotions } =
-    product
-  const imageSrc = `https://images.hollandandbarrettimages.co.uk/productimages/HB/${resolution}/${id}_A.jpg`
+  const {
+    id,
+    name,
+    price,
+    stock_status,
+    rating,
+    review_count,
+    promotions,
+    images,
+  } = product
 
   return (
-    <View style={[styles.productCard, isDetails && styles.productCardLarge]}>
-      <TouchableOpacity
-        onPress={() => onPress && onPress(product)}
-        disabled={isDetails}>
-        <Image
-          style={[styles.productImage, isDetails && styles.productImageLarge]}
-          source={{
-            uri: imageSrc,
-          }}
+    <TouchableOpacity
+      onPress={() => onPress && onPress(product)}
+      disabled={isDetails}>
+      <View style={[styles.productCard, isDetails && styles.productCardLarge]}>
+        <ProductImage
+          images={images}
+          id={id}
+          promotions={isDetails ? promotions : []}
+          showThumbnails={isDetails}
+          resolution={resolution}
         />
         <View style={styles.productInfo}>
           {!!name && (
@@ -49,7 +57,6 @@ const ProductCard: FC<IProps> = ({
           )}
           {!!isDetails && (
             <>
-              {!!promotions?.length && <Promotions promotions={promotions} />}
               {!!price && (
                 <Text style={styles.productInfoItem}>{`£${price}`}</Text>
               )}
@@ -66,8 +73,8 @@ const ProductCard: FC<IProps> = ({
             </>
           )}
         </View>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   )
 }
 

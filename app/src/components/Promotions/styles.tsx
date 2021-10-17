@@ -3,8 +3,14 @@ import { colours } from '../../config/themes'
 
 const styles = StyleSheet.create({
   promotions: {
-    padding: 2,
-    borderRadius: 10,
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+  },
+  promotion: {
+    paddingVertical: 2,
+    paddingHorizontal: 4,
+    borderRadius: 5,
+    overflow: 'hidden',
     color: colours.white,
     backgroundColor: colours.pomegranatePrimary,
   },

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Availabilit renders correctly 1`] = `
+exports[`<Availability /> renders correctly 1`] = `
 <View
   style={
     Object {
@@ -27,7 +27,7 @@ exports[`Availabilit renders correctly 1`] = `
     }
   />
   <Text>
-    instock
+    In Stock
   </Text>
 </View>
 `;

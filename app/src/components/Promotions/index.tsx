@@ -1,16 +1,21 @@
 import React, { FC } from 'react'
-import { IProduct } from '../../@Types/product'
-import { Text } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
 import styles from './styles'
 
 interface IPromotionsProps {
-  promotions: IProduct['promotions']
+  promotions: string[]
 }
 
 type IProps = IPromotionsProps
 
 const Promotions: FC<IProps> = ({ promotions }) => (
-  <Text style={styles.promotions}>{promotions.join(', ').trim()}</Text>
+  <View style={styles.promotions}>
+    <FlatList
+      data={promotions}
+      renderItem={({ item }) => <Text style={styles.promotion}>{item}</Text>}
+      keyExtractor={(item, index) => `${item}-${index}`}
+    />
+  </View>
 )
 
 export default Promotions

@@ -2,12 +2,13 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import ProductCard from '../'
 
-describe('ProductCard', () => {
+describe('<ProductCard />', () => {
   it('renders correctly', () => {
     const product = {
       id: '000001',
       name: 'Example Product',
       price: 20,
+      images: [],
     }
     const tree = renderer.create(<ProductCard product={product} />).toJSON()
     expect(tree).toMatchSnapshot()
@@ -17,6 +18,7 @@ describe('ProductCard', () => {
       id: '000001',
       name: 'Example Product',
       price: 20,
+      images: [],
     }
     const tree = renderer
       .create(<ProductCard product={product} isDetails />)

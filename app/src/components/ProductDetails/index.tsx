@@ -8,7 +8,7 @@ type IProps = NativeStackScreenProps<RootStackParamList, 'Product Details'>
 const ProductDetails: FC<IProps> = ({ route }) => {
   const { product } = route.params
 
-  return <ProductCard product={product} resolution="370" isDetails />
+  return <ProductCard product={product} resolution={370} isDetails />
 }
 
 export default ProductDetails

@@ -12,13 +12,6 @@ const styles = StyleSheet.create({
   productCardLarge: {
     height: '100%',
   },
-  productImage: {
-    width: '100%',
-    height: 180,
-  },
-  productImageLarge: {
-    height: 370,
-  },
   productInfo: {
     padding: 4,
   },

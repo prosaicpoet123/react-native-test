@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductImage /> renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://images.hollandandbarrettimages.co.uk/productimages/HB/180/048774_A.jpg",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "height": 180,
+            "width": "100%",
+          },
+          Object {
+            "height": 180,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`<ProductImage /> renders correctly with thumbnails 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://images.hollandandbarrettimages.co.uk/productimages/HB/180/048774_A.jpg",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "height": 180,
+            "width": "100%",
+          },
+          Object {
+            "height": 180,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+      }
+    }
+  >
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "path": "//images.hollandandbarrettimages.co.uk/productimages/HB/70/048774_A.jpg",
+            "resolution": 70,
+          },
+          Object {
+            "path": "//images.hollandandbarrettimages.co.uk/productimages/HB/70/048774_B.jpg",
+            "resolution": 70,
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={true}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 0.2,
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://images.hollandandbarrettimages.co.uk/productimages/HB/70/048774_A.jpg",
+                }
+              }
+              style={
+                Object {
+                  "height": 70,
+                  "width": 70,
+                }
+              }
+            />
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              null,
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://images.hollandandbarrettimages.co.uk/productimages/HB/70/048774_B.jpg",
+                }
+              }
+              style={
+                Object {
+                  "height": 70,
+                  "width": 70,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;

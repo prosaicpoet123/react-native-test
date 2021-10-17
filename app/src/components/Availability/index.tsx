@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { Text, View } from 'react-native'
 import { IProduct } from '../../@Types/product'
+import { parseStockStatus } from '../../utils/parseStockStatus'
 import styles from './styles'
 
 interface IAvailabilityProps {
@@ -17,7 +18,7 @@ const Availability: FC<IProps> = ({ stock }) => (
         stock === 'INSTOCK' ? styles.instock : styles.oos,
       ]}
     />
-    <Text>{stock.toLowerCase()}</Text>
+    <Text>{parseStockStatus(stock)}</Text>
   </View>
 )
 

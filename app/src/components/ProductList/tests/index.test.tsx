@@ -2,7 +2,7 @@ import React from 'react'
 import renderer, { act } from 'react-test-renderer'
 import ProductList from '..'
 
-describe('ProductList', () => {
+describe('<ProductList />', () => {
   it('renders correctly', async () => {
     const fakeProducts = {
       products: [
