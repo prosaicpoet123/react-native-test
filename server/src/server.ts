@@ -7,7 +7,7 @@ import logger from './util/logger'
 
 require('dotenv').config()
 
-const PORT = process.env.PORT ?? 4000
+const PORT = process.env.PORT || 4000
 
 function createServer(): express.Application {
   const server = express()
@@ -26,4 +26,3 @@ export default function startServer(): void {
     logger.info(`Server listening on port ${PORT} 🚀`)
   })
 }
-
