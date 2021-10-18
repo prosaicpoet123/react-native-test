@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Promotions /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+      "flexWrap": "wrap",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#F7403A",
+        "borderRadius": 5,
+        "color": "#FFFFFF",
+        "overflow": "hidden",
+        "paddingHorizontal": 4,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    promotion 1
+  </Text>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#F7403A",
+        "borderRadius": 5,
+        "color": "#FFFFFF",
+        "overflow": "hidden",
+        "paddingHorizontal": 4,
+        "paddingVertical": 2,
+      }
+    }
+  >
+    promotion 2
+  </Text>
+</View>
+`;

@@ -5,7 +5,9 @@ import middleware from './middleware'
 
 import logger from './util/logger'
 
-const PORT = 4000 // TODO: make this configurable
+require('dotenv').config()
+
+const PORT = process.env.PORT || 4000
 
 function createServer(): express.Application {
   const server = express()

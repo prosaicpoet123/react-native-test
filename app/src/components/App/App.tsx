@@ -1,11 +1,20 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { RootStackParamList } from '../../@Types/navigation'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import ProductList from '../ProductList'
+import ProductDetails from '../ProductDetails'
+
+const Stack = createNativeStackNavigator<RootStackParamList>()
 
 function App(): React.ReactElement {
   return (
-    <View>
-      <Text>Your app here</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Product List" component={ProductList} />
+        <Stack.Screen name="Product Details" component={ProductDetails} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 
