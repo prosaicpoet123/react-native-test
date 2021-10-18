@@ -14,11 +14,18 @@ router.get('/all', (req, res) => {
   if (page) {
     data = products.slice(page * PAGE_SIZE - PAGE_SIZE, page * PAGE_SIZE)
   }
+  if (!data || !data.length) {
+    return res.status(400).send({ message: 'No data' })
+  }
   res.json({ products: data })
 })
 
 router.get('/:id', (req, res) => {
-  res.json(products.find((product) => product.id === req.params.id))
+  const data = products.find((product) => product.id === req.params.id)
+  if (!data) {
+    return res.status(400).send({ message: 'No data' })
+  }
+  res.json({ product: data })
 })
 
 export default router

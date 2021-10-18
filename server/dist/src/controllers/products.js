@@ -14,9 +14,16 @@ router.get('/all', (req, res) => {
     if (page) {
         data = products_json_1.default.slice(page * PAGE_SIZE - PAGE_SIZE, page * PAGE_SIZE);
     }
+    if (!data || !data.length) {
+        return res.status(400).send({ message: 'No data' });
+    }
     res.json({ products: data });
 });
 router.get('/:id', (req, res) => {
-    res.json(products_json_1.default.find((product) => product.id === req.params.id));
+    const data = products_json_1.default.find((product) => product.id === req.params.id);
+    if (!data) {
+        return res.status(400).send({ message: 'No data' });
+    }
+    res.json({ product: data });
 });
 exports.default = router;

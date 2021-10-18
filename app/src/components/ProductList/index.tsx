@@ -97,7 +97,9 @@ const ProductList: FC<IProductListProps> = ({ navigation }) => {
           }:4000/products/all?page=${offset}`,
         )
         const json = await response.json()
-        setData((d) => [...d, ...json.products])
+        if (json.products) {
+          setData((d) => [...d, ...json.products])
+        }
       } catch (error) {
         console.error(error)
         setError(true)
